@@ -5,8 +5,14 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["post"],
-      "route": "generate-proposal"
+      "methods": ["post"]
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputBlob",
+      "path": "proposals/{rand-guid}.json",
+      "connection": "AzureWebJobsStorage"
     },
     {
       "type": "http",
